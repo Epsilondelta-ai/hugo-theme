@@ -31,14 +31,7 @@ Add this to your site configuration. e. g. `hugo.toml`
 
 ```toml
 [build]
-  [build.buildStats]
-    enable = true
-  [[build.cachebusters]]
-    source = 'assets/notwatching/hugo_stats\.json'
-    target = 'css'
-  [[build.cachebusters]]
-    source = '(postcss|tailwind)\.config\.js'
-    target = 'css'
+  _merge = 'deep'
 [module]
   [[module.mounts]]
     source = 'assets'
@@ -54,7 +47,17 @@ Add this to your site configuration. e. g. `hugo.toml`
 example here
 
 ```toml
+baseURL = 'https://tech.epsilondelta.ai/'
+languageCode = 'ko-KR'
+title = '엡실론델타 테크블로그'
+theme = 'epsilondelta'
+enableRobotsTXT = true
+
+[markup]
+  _merge = 'deep'
+
 [params]
+  _merge = 'deep'
   description = '엡실론델타 테크블로그입니다.' # for meta og tag
   images = ['logo.jpg'] # for meta og tag
   title = '엡실론델타 테크블로그' # for meta og tag
@@ -73,13 +76,34 @@ example here
 #     id = 'G-MEASUREMENT_ID'
 
 [pagination]
-  disableAliases = false
-  pagerSize = 6
-  path = 'page'
+  _merge = 'deep'
 
 [taxonomies]
-  tag = 'tags'
-  author = 'authors'
-  post = 'posts'
-  series = 'series'
+  _merge = 'deep'
+
+[[menus.main]]
+name = 'Tags'
+pageRef = '/tags'
+weight = 10
+
+[[menus.main]]
+name = 'Authors'
+pageRef = '/authors'
+weight = 20
+
+[sitemap]
+  changefreq = "daily"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[build]
+  _merge = 'deep'
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
 ```
