@@ -1,12 +1,3 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-US'
-title = 'My New Hugo Site'
-
-[module]
-  [module.hugoVersion]
-    extended = false
-    min = "0.116.0"
-
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -17,3 +8,24 @@ title = 'My New Hugo Site'
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)']]
+
+[pagination]
+  disableAliases = false
+  pagerSize = 6
+  path = 'page'
+
+[taxonomies]
+  tag = 'tags'
+  author = 'authors'
+  post = 'posts'
+  series = 'series'
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
