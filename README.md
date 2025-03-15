@@ -10,7 +10,7 @@
 ### Git Submodule
 
 ```bash
-git submodule add https://github.com/epsilondelta-ai/epsilondelta-hugo-theme.git themes/epsilondelta
+git submodule add https://github.com/epsilondelta-ai/hugo-theme.git themes/epsilondelta
 # Or to update to the latest version
 git submodule update --remote
 ```
