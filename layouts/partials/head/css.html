@@ -1,0 +1,4 @@
+{{ with (templates.Defer (dict "key" "global")) }}
+  {{ partial "head/tailwind.html" (dict "context" . "css" "css/main.css") }}
+  {{ partial "head/tailwind.html" (dict "context" . "css" "css/paginate.css") }}
+{{ end }}
