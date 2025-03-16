@@ -68,6 +68,13 @@ enableRobotsTXT = true
   titleLight = '테크블로그'
   logo = '/logo.jpg'
   featuredTags = [] # 페이지 상단에 강조하고 싶은 태그들을 나열합니다.
+  [params.giscus]
+    enabled = true
+    repo = 'Epsilondelta-ai/tech.epsilondelta.ai'
+    repoId = '***'
+    category = 'General'
+    categoryId = '***'
+    theme = 'light'
 
 # [services]
 #   [services.disqus]
