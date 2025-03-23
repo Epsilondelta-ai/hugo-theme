@@ -1,0 +1,34 @@
+{{ $defaultWidth := "100%" }}
+{{ $defaultHeight := "500px" }}
+
+{{ if .IsNamedParams }}
+  <iframe
+    allowfullscreen="true"
+    allowpaymentrequest="true"
+    allowtransparency="true"
+    frameborder="0"
+    height="500px"
+    width="100%"
+    name="cp_embed_1"
+    scrolling="no"
+    src="https://codepen.io/anon/embed/{{ .Get "id" }}?default-tab=result&amp;slug-hash={{ .Get "id" }}"
+    style="width:{{ with .Get "width" }}{{.}}{{ else }}{{ $defaultWidth }}{{ end }}; height:{{ with .Get "height" }}{{.}}{{ else }}{{ $defaultHeight }}{{ end }}; max-width: 100%; overflow:hidden; display:block; margin: auto; margin-bottom: 1rem;"
+    title="CodePen Embed"
+    loading="lazy"
+  ></iframe>
+{{ else }}
+  <iframe
+    allowfullscreen="true"
+    allowpaymentrequest="true"
+    allowtransparency="true"
+    frameborder="0"
+    height="500px"
+    width="100%"
+    name="cp_embed_1"
+    scrolling="no"
+    src="https://codepen.io/anon/embed/{{ .Get 0 }}?default-tab=result&amp;slug-hash={{ .Get 0 }}"
+    style="width: {{ $defaultWidth }}; height: {{ $defaultHeight }}; max-width: 100%; overflow:hidden; display:block; margin: auto; margin-bottom: 1rem;"
+    title="CodePen Embed"
+    loading="lazy"
+  ></iframe>
+{{ end }}

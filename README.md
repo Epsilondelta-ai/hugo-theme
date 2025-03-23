@@ -114,3 +114,21 @@ weight = 20
     source = 'hugo_stats.json'
     target = 'assets/notwatching/hugo_stats.json'
 ```
+
+## ShortCodes
+
+### codesandbox
+
+```go-template
+{{< codesandbox aaaaa >}}
+
+{{< codesandbox id="aaaaa" width="100%" height="500px" >}}
+```
+
+### codepen
+
+```go-template
+{{< codepen aaaaa >}}
+
+{{< codepen id="aaaaa" width="100%" height="500px" >}}
+```
